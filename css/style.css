@@ -80,3 +80,20 @@ nav ul{
     font-family:Arial;
     font-style:italic;
 }
+
+.category{
+    padding-top:1rem;
+    padding-bottom:1rem;
+
+
+
+}
+
+.category h2{
+
+     font-weight:bold;
+     font-family:Arial;
+     font-size:2rem;
+
+
+}
