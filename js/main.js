@@ -14,69 +14,18 @@ closeBtn.addEventListener('click', () => {
   // console.log("clickkkkkked")
 }); // end of menuBtn click
 
-function displayCategory(category, properties) {
-  const section = document.createElement('section');
-  section.classList.add('section--category');
+const displayCategory = (category, properties) => {
+  // console.log({category});
 
-  // Create and append an h2 element for the category name
-  const title = document.createElement('h2');
-  title.textContent = category.label.plural;
-  section.appendChild(title);
-
-  document.body.appendChild(section);
-
-  // properties.forEach((room) => {
-  //   // create elements
-  //   const roomArticle = document.createElement("article");
-  //   roomArticle.classList.add("room");
-
-  //   const roomNameElement = document.createElement("h3");
-  //   roomNameElement.classList.add("room--name");
-  //   roomNameElement.textContent = room.name;
-
-  //   const roomDescriptionElement = document.createElement("p");
-  //   roomDescriptionElement.classList.add("room--description");
-  //   roomDescriptionElement.textContent = room.description;
-
-  //   const roomPriceElement = document.createElement("p");
-  //   roomPriceElement.textContent = `Price: ${room.price}`;
-
-  //   const roomGuestsElement = document.createElement("p");
-  //   roomGuestsElement.textContent = `Guests: ${room.guests}`;
-
-  //   roomArticle.appendChild(roomNameElement);
-  //   roomArticle.appendChild(roomDescriptionElement);
-  //   roomArticle.appendChild(roomPriceElement);
-  //   roomArticle.appendChild(roomGuestsElement);
-
-  //   document.body.appendChild(roomArticle);
-  // }); // end of forEach
-}
-
-const displayCategory ={category, properties} => {
-  //console.log({category});
   const sectionElement = document.createElement('section');
+  sectionElement.classList.add('category');
+
   const sectionTitle = document.createElement('h2');
-  sectionElement.classList.add('category')
-
-
-
-
   sectionTitle.textContent = category.label.plural;
 
   sectionElement.appendChild(sectionTitle);
 
-
-  //console.log(category.label.singular);
-
-  // 1.Filter properties
-  const filteredProperties = properties.filter(property) => {
-
-  
-
-  //return true of false
-
-  return category.label.singular === property.type });
+  const filteredProperties = properties.filter((property) => category.label.singular === property.type);
 
   filteredProperties.sort((a, b) => {
     if (a.name < b.name) {
@@ -88,47 +37,23 @@ const displayCategory ={category, properties} => {
     return 0;
   });
 
-  filteredProperties.forEach(preoperty=>{
-
+  filteredProperties.forEach((property) => {
     const articleElement = document.createElement('article');
     articleElement.classList.add('property');
 
-
-
-    let propertiesHTML = '';
-
-    propertiesHTML += `
+    const propertiesHTML = `
         <h3 class="property--name">${property.name}</h3>
         <p class="property--description">${property.description}</p>
         <p class="property--price">Price: ${property.price}</p>
     `;
-Element.appendChild(articleElement);
 
-
-
-
-    const propertyTitle = document.createElement('h3');
-
-    propertyTitle.classList.add('preoprty-title');
-
-
-
+    articleElement.innerHTML = propertiesHTML;
+    sectionElement.appendChild(articleElement);
   });
 
-
-
-
-
-
-//2. Loop and append properties
+  // 2. Loop and append properties
   document.body.appendChild(sectionElement);
-
-
-
-}
-
-
-
+};
 
 Promise.all([
   // fetch 1
@@ -144,6 +69,3 @@ Promise.all([
   .catch((error) => {
     console.error('There was a problem fetching the data:', error);
   });
-
-
-

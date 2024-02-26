@@ -1,99 +1,85 @@
-html,body,h1,h2,h3,h4,h5,h6,p,ul,li,button{
-    margin:0;
-    padding:0;
-    font:inherit;
-
-
-}
-ul,li{
-    list-style:none;
+html, body, h1, h2, h3, h4, h5, h6, p, ul, li, button {
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
-*{
-box-sizing: border-box;
-
+ul, li {
+  list-style: none;
 }
 
-body{
-    background-color: yellow;
-
-
-
+* {
+  box-sizing: border-box;
 }
 
-header{
-    background-color: white;
-    padding: 1rem;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-   
-
-
-
-
+body {
+  background-color: #d74100;
 }
 
-header h1{ font-size:2.5rem;
-
+header {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav ul{
-    display: flex;
-    gap:1rem;
-
-
-
+header h1 {
+  font-size: 2.5rem;
 }
 
-.overlay{
-    width:100vw;
-    height:100vh;
-    background: limegreen;
-    position:fixed;
-    top:0;
-    left:-100vw;
-    z-index:1000;
-    transition:all .5s;
-}
-.overlay.active{
-    left:0;
+nav ul {
+  display: flex;
+  gap: 1rem;
 }
 
-.room{
-    padding: top 1rem;
-    padding-bottom:1rem;
-    border-bottom: 1px solid green;
-
-
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background: limegreen;
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  z-index: 1000;
+  transition: all 0.5s;
 }
 
-
-.room--name{
-    font: size 1.5rem;
-    font-weight:bold;
-    font-family:Arial, 
+.overlay.active {
+  left: 0;
 }
 
-.room--description{
-    font-size: 1rem;
-    font-family:Arial;
-    font-style:italic;
+.room {
+  padding: top 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid green;
 }
 
-.category{
-    padding-top:1rem;
-    padding-bottom:1rem;
-
-
-
+.room--name {
+  font: size 1.5rem;
+  font-weight: bold;
+  font-family: Arial;
 }
 
-.category h2{
-
-     font-weight:bold;
-     font-family:Arial;
-     font-size:2rem;
-
-
+.room--description {
+  font-size: 1rem;
+  font-family: Arial;
+  font-style: italic;
 }
+
+.category {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.category h2 {
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 2rem;
+}
+
+header {
+  background-color: #000;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
