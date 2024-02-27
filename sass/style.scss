@@ -1,5 +1,10 @@
-$color__orange: #d74100;
+@use './header';
 
+
+
+
+$color__orange: #d74100;
+$font_primary: Arial,Verdana, sans_serif;
 
 
 
@@ -10,9 +15,6 @@ html,body,h1,h2,h3,h4,h5,h6,p,ul,li,button{
     font:inherit;
 
 
-}
-ul,li{
-    list-style:none;
 }
 
 *{
@@ -27,18 +29,7 @@ body{
 
 }
 
-header{
-    background-color: white;
-    padding: 1rem;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-   
 
-
-
-
-}
 
 header h1{ font-size:2.5rem;
 
@@ -111,4 +102,20 @@ header {
   
 
 
-  
+  nav {
+    background-color: $color__orange; // temporary color
+    ul {
+      display: flex;
+      gap: 1rem;
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          color: black;
+          &:hover {
+            color: $color__orange;
+          }
+        }
+      }
+    }
+  }
