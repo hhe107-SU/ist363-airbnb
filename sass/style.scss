@@ -1,9 +1,30 @@
 @use './header';
+// style.scss
+@use "vendor";
+@use "base";
+@use "components";
+@use "layout";
+@use "pages";
+@use "themes";
 
 
+// declare mixins in a file, specifically: abstracts/_mixins.scss
+@mixin fontProperties() {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+// then import the mixins and use it in a file
+// base/_base.scss
+@use "../abstracts/mixins";
+
+body {
+  @include mixins.fontProperties();
+}
 
 
-$color__orange: #d74100;
+$color__primary: #d74100;
 $font_primary: Arial,Verdana, sans_serif;
 
 
@@ -23,7 +44,7 @@ box-sizing: border-box;
 }
 
 body{
-    background-color: $color__orange;
+    background-color: $color__primary;
 
 
 
@@ -31,17 +52,43 @@ body{
 
 
 
-header h1{ font-size:2.5rem;
+:root {
+  --airbnb-pink: #ff385c;
+ }
+ 
+ 
+ .logo {
+  width: 150px;
+  height: auto;
+  fill: var(--airbnb-pink);
+ }
+ 
+ header {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
 
-}
-
-nav ul{
+nav {
+  background-color: pink; // temporary color
+  ul {
     display: flex;
-    gap:1rem;
-
-
-
+    gap: 1rem;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          color: $color__primary;
+        }
+      }
+    }
+  }
 }
+
 
 .overlay{
     width:100vw;
@@ -95,15 +142,12 @@ nav ul{
 
 }
 
-header {
-    background-color: #000;
-    color: white;
-  }
+
   
 
 
   nav {
-    background-color: $color__orange; // temporary color
+    background-color: $color__primary; // temporary color
     ul {
       display: flex;
       gap: 1rem;
@@ -113,7 +157,7 @@ header {
           text-decoration: none;
           color: black;
           &:hover {
-            color: $color__orange;
+            color: $color__primary;
           }
         }
       }

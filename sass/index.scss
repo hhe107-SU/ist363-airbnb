@@ -1,0 +1,9 @@
+// base/_index.scss
+@use "reset";
+@use "typography";
+
+// components/_index.scss
+@use "buttons";
+@use "carousel";
+@use "cover";
+@use "dropdown";

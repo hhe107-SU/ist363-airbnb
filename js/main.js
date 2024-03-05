@@ -2,7 +2,7 @@
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const closeBtn = document.getElementById('closeBtn');
-const contentDIV = document.getElementById('content')
+const contentDIV = document.getElementById('content');
 
 // "event name","callback function"
 menuBtn.addEventListener('click', () => {
@@ -53,7 +53,7 @@ const displayCategory = (category, properties) => {
   });
 
   // 2. Loop and append properties
-  contentDIV.body.appendChild(sectionElement);
+  contentDIV.appendChild(sectionElement);
 };
 
 Promise.all([
